@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Git instruction</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			cursor: default;
+		}
+
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 20px 10px;
+			font-size: 16px;
+			font-family: 'Helvetica', sans-serif;
+		}
+
+		h1 {
+			margin-bottom: 40px;
+			text-align: center;
+		}
+		h1 small {
+			font-size: .75em;
+			font-weight: 500;
+		}
+
+		.iblock {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			max-width: 600px;
+			margin-bottom: 40px;
+			padding: 20px;
+			background: #f9f9f9;
+		}
+		.iblock__img {
+			width: 100%;
+			margin-bottom: 10px;
+		}
+		.iblock__title {
+			font-size: 1.2em;
+		}
+		.iblock__desc {
+			margin-top: 10px;
+			color: #555;
+		}
+		.iblock__code {
+			position: relative;
+			margin-top: 5px;
+			padding: 10px;
+			background: #f5f5f5;
+			cursor: text;
+		}
+		.iblock__code_input:before {
+			content: 'input';
+			position: absolute;
+			top: 0px;
+			right: 3px;
+			display: inline-block;
+			color: #777;
+			font-size: .75em;
+		}
+		.iblock__code_output:before {
+			content: 'output';
+			position: absolute;
+			top: 0px;
+			right: 3px;
+			display: inline-block;
+			color: #777;
+			font-size: .75em;
+		}
+	</style>
+</head>
+<body>
+	<h1>GIT instruction<br><small>simple usage</small></h1>
+
+	<p class="iblock">
+		<strong class="iblock__title">Get git version</strong>
+		<span class="iblock__desc"></span>
+		<code class="iblock__code iblock__code_input">git --version</code>
+		<code class="iblock__code iblock__code_output">git version 2.15.0</code>
+	</p>
+
+	<p class="iblock">
+		<strong class="iblock__title">Clone</strong>
+		<span class="iblock__desc">This command clonind remote repo to local workspace in folder with name 'git'</span>
+		<code class="iblock__code iblock__code_input">git clone git@github.com:zeniaroman/git.git</code>
+		<code class="iblock__code iblock__code_output">Cloning into 'git'...</code>
+	</p>
+
+	<p class="iblock">
+		<strong class="iblock__title">Check status</strong>
+		<span class="iblock__desc">Will show repo stage status</span>
+		<code class="iblock__code iblock__code_input">git status</code>
+		<code class="iblock__code iblock__code_output">On branch...</code>
+	</p>
+
+	<p class="iblock">
+		<strong class="iblock__title">Repo log</strong>
+		<span class="iblock__desc">Show log of last changes. Press Q to exit</span>
+		<code class="iblock__code iblock__code_input">git log</code>
+		<code class="iblock__code iblock__code_output">commit 94f5db46c35c77111c8adeb4fc7219a1cdc73f4e (HEAD -> main, origin/main, origin/HEAD) Author: zeniaroman <45962172+zeniaroman@users.noreply.github.com> Date:   Fri Feb 4 22:35:36 2022 +0300 Initial commit</code>
+	</p>
+
+	<p class="iblock">
+		<img class="iblock__img" src="git-visual.png" alt="">
+		<strong class="iblock__title">Repo stages</strong>
+		<span class="iblock__desc"><strong>Add</strong> to index staging all modified files</span>
+		<code class="iblock__code iblock__code_input">git add .</code>
+		<code class="iblock__code iblock__code_output">(nothing)</code>
+
+		<span class="iblock__desc"><strong>Commit</strong> changes to local repo</span>
+		<code class="iblock__code iblock__code_input">git commit -m "Message for new changes"</code>
+		<code class="iblock__code iblock__code_output">[main 6331f74] Message for new changes</code>
+
+		<span class="iblock__desc"><strong>Reset</strong> the last commit that was not pushed and save commit changes to the workspace. It's --soft reset by default</span>
+		<code class="iblock__code iblock__code_input">git reset HEAD~1</code>
+		<code class="iblock__code iblock__code_output">(nothing)</code>
+
+		<span class="iblock__desc"><strong>Reset</strong> the last commit that was not pushed and don't save commit changes(any code) to the workspace.</span>
+		<code class="iblock__code iblock__code_input">git reset --hard HEAD~1</code>
+		<code class="iblock__code iblock__code_output">(nothing)</code>
+
+		<span class="iblock__desc"><strong>Push</strong> changes to remote repo</span>
+		<code class="iblock__code iblock__code_input">git push</code>
+		<code class="iblock__code iblock__code_output">Pushed...</code>
+
+		<span class="iblock__desc"><strong>Revert</strong> changes on remote repo with clean commit code. Grab commit hash with <em>git log</em></span>
+		<code class="iblock__code iblock__code_input">git revert &lt;commit_hash&gt;</code>
+		<code class="iblock__code iblock__code_input">:wq (in Vim)</code>
+		<code class="iblock__code iblock__code_input">git push</code>
+		<code class="iblock__code iblock__code_output">Pushed...</code>
+	</p>
+
+	<!-- <p class="iblock">
+		<strong class="iblock__title">title</strong>
+		<span class="iblock__desc">desc</span>
+		<code class="iblock__code iblock__code_input">input</code>
+		<code class="iblock__code iblock__code_output">output</code>
+	</p> -->
+</body>
+</html>
