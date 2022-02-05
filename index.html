@@ -96,6 +96,13 @@
 	</p>
 
 	<p class="iblock">
+		<strong class="iblock__title">Pull</strong>
+		<span class="iblock__desc">This command pull last version of repo from remote</span>
+		<code class="iblock__code iblock__code_input">git pull</code>
+		<code class="iblock__code iblock__code_output">Already up to date.</code>
+	</p>
+
+	<p class="iblock">
 		<strong class="iblock__title">Check status</strong>
 		<span class="iblock__desc">Will show repo stage status</span>
 		<code class="iblock__code iblock__code_input">git status</code>
@@ -137,6 +144,31 @@
 		<code class="iblock__code iblock__code_input">:wq (in Vim)</code>
 		<code class="iblock__code iblock__code_input">git push</code>
 		<code class="iblock__code iblock__code_output">Counting objects: ..., done.</code>
+	</p>
+
+	<p class="iblock">
+		<strong class="iblock__title">Work with branch</strong>
+		<span class="iblock__desc"><strong>Check</strong> current branch</span>
+		<code class="iblock__code iblock__code_input">git branch</code>
+		<code class="iblock__code iblock__code_output">* main</code>
+
+		<span class="iblock__desc"><strong>Create</strong> new branch and switch to a this new branch</span>
+		<code class="iblock__code iblock__code_input">git checkout -b &lt;new_branch_name&gt;</code>
+		<code class="iblock__code iblock__code_output">Switched to a new branch 'new_branch_name'</code>
+
+		<span class="iblock__desc"><strong>Create</strong> new branch <em>without</em> switch to a this new branch</span>
+		<code class="iblock__code iblock__code_input">git branch &lt;new_branch_name&gt;</code>
+		<code class="iblock__code iblock__code_output">(nothing)</code>
+
+		<span class="iblock__desc"><strong>Switch</strong> between branch</span>
+		<code class="iblock__code iblock__code_input">git checkout  &lt;branch_name&gt;</code>
+		<code class="iblock__code iblock__code_output">Switched to branch 'branch_name'</code>
+
+		<span class="iblock__desc"><strong>Delete</strong> a local branch from repo. Use key -D if branch contains unmerged changes</span>
+		<code class="iblock__code iblock__code_input">git branch -d &lt;branch_name&gt;</code>
+		<code class="iblock__code iblock__code_output">Deleted branch branch_name (was 8545770).</code>
+
+		
 	</p>
 
 	<!-- <p class="iblock">
